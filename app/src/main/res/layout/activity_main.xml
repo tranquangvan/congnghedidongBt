@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Addition"
+        android:text="Calculator"
         android:textAlignment="center"
         android:textSize="30dp"
         android:textStyle="bold" />
@@ -22,14 +22,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_a"
+            android:id="@+id/a"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="a"
             android:textSize="30dp" />
 
         <EditText
-            android:id="@+id/edt_a"
+            android:id="@+id/idNumber1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -43,14 +43,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/tv_b"
+            android:id="@+id/b"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="b"
             android:textSize="30dp" />
 
         <EditText
-            android:id="@+id/edt_b"
+            android:id="@+id/idNumber2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -65,31 +65,38 @@
         android:gravity="center" />
 
     <Button
-        android:id="@+id/btn_plus"
+        android:id="@+id/idAdd"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="150dp"
+        android:onClick="onAdd"
         android:text="+"
         android:textSize="40dp" />
+
     <Button
-        android:id="@+id/btn_sub"
+        android:id="@+id/idSub"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="150dp"
+        android:onClick="onSub"
         android:text="-"
         android:textSize="40dp" />
+
     <Button
-        android:id="@+id/btn_mul"
+        android:id="@+id/idMul"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="150dp"
+        android:onClick="onMul"
         android:text="*"
         android:textSize="40dp" />
+
     <Button
-        android:id="@+id/btn_div"
+        android:id="@+id/idDiv"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginLeft="150dp"
+        android:onClick="onDiv"
         android:text="/"
         android:textSize="40dp" />
 
@@ -101,7 +108,7 @@
         android:layout_marginRight="20dp">
 
         <TextView
-            android:id="@+id/tv_result"
+            android:id="@+id/idResult"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp" />

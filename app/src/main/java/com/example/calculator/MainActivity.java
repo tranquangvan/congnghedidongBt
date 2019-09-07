@@ -2,93 +2,53 @@ package com.example.calculator;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText mEditA, mEditB;
-    private TextView mTvResult;
-    private Button btn_plus, btn_sub, btn_mul, btn_div;
-    private int a, b;
+    TextView textView;
+    EditText etNumber1;
+    EditText etNumber2;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mEditA = findViewById(R.id.edt_a);
-        mEditB = findViewById(R.id.edt_b    );
-        btn_plus = findViewById(R.id.btn_plus);
-        btn_sub = findViewById(R.id.btn_sub);
-        btn_mul = findViewById(R.id.btn_mul);
-        btn_div = findViewById(R.id.btn_div);
-        mTvResult = findViewById(R.id.tv_result);
-        btn_plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                a=getContentA();
-                b= getContentB();
-                String result=a+" + "+b+" = "+add(a,b);
-                mTvResult.setText(result);
-            }
-        });
+        textView = (TextView)findViewById(R.id.idResult);
+        etNumber1 = (EditText)findViewById(R.id.idNumber1);
+        etNumber2 = (EditText)findViewById(R.id.idNumber2);
 
-        btn_sub.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                a=getContentA();
-                b= getContentB();
-                String result=a+" - "+b+" = "+sub(a,b);
-                mTvResult.setText(result);
-            }
-        });
-
-        btn_mul.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                a=getContentA();
-                b= getContentB();
-                String result=a+" * "+b+" = "+mul(a,b);
-                mTvResult.setText(result);
-            }
-        });
-
-        btn_div.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                a=getContentA();
-                b= getContentB();
-                String result;
-                result= a + " / " +b+" = "+div(a,b);
-                mTvResult.setText(result);
-            }
-        });
     }
 
-    int add(int a, int b) {
-        return a + b;
+    public void onAdd(View view) {
+        int number1 = Integer.parseInt(etNumber1.getText().toString());
+        int number2 = Integer.parseInt(etNumber2.getText().toString());
+        int sum = number1 + number2;
+        textView.setText("Result is "+sum);
     }
 
-
-    int sub(int a, int b) {
-        return a - b;
+    public void onSub(View view) {
+        int number1 = Integer.parseInt(etNumber1.getText().toString());
+        int number2 = Integer.parseInt(etNumber2.getText().toString());
+        int sub = number1 - number2;
+        textView.setText("Result is "+sub);
     }
 
-    int mul(int a, int b) {
-        return a * b;
+    public void onMul(View view) {
+        int number1 = Integer.parseInt(etNumber1.getText().toString());
+        int number2 = Integer.parseInt(etNumber2.getText().toString());
+        int mul = number1 * number2;
+        textView.setText("Result is "+mul);
     }
 
-    float div(int a, int b) {
-        return (float) a / b;
-    }
-
-    int getContentA() {
-        return Integer.parseInt(mEditA.getText().toString());
-    }
-
-    int getContentB() {
-        return Integer.parseInt(mEditB.getText().toString());
+    public void onDiv(View view) {
+        int number1 = Integer.parseInt(etNumber1.getText().toString());
+        int number2 = Integer.parseInt(etNumber2.getText().toString());
+        int div = number1/number2;
+        textView.setText("Result is "+div);
     }
 }
